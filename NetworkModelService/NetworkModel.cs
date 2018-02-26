@@ -1009,7 +1009,6 @@ namespace FTN.Services.NetworkModelService
                                     List<Property> rdProp = (List<Property>)properties.Where(x => x.ResourceDescription_Id == rd.IdDb).ToList();
                                     ResourceDescription res = new ResourceDescription(rd.Id, rdProp);
                                     InsertEntity(rd);
-                                    ;
                                 }
                                 catch (Exception e)
                                 {

@@ -61,6 +61,8 @@ namespace DMSService
         public DMSDispatcherService()
         {
             Console.WriteLine("Dispatcher instantiated");
+            //Pokretanje inicijalizacije mreze
+            DMSService dmsService = DMSService.Instance;
         }
 
         public List<Element> GetAllElements()

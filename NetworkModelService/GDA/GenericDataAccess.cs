@@ -15,9 +15,9 @@ namespace FTN.Services.NetworkModelService
     public class GenericDataAccess : INetworkModelGDAContract
     {
 
-        private static Dictionary<int, ResourceIterator> resourceItMap; // = new Dictionary<int, ResourceIterator>();
-        private static int resourceItId; // = 0;
-        protected static NetworkModel nm; // = null;
+        private static Dictionary<int, ResourceIterator> resourceItMap = new Dictionary<int, ResourceIterator>();
+        private static int resourceItId = 0;
+        protected static NetworkModel nm = null;
         private static NetworkModel newNetworkModel; // = new NetworkModel();
         private static NetworkModel oldNetworkModel;
 
@@ -26,11 +26,12 @@ namespace FTN.Services.NetworkModelService
 
         public GenericDataAccess()
         {
+            NetworkModelService nms = new NetworkModelService();
             resourceItMap = new Dictionary<int, ResourceIterator>();
             resourceItId = 0;
-            nm = new NetworkModel();
-            NewNetworkModel = new NetworkModel();
-            OldNetworkModel = new NetworkModel();
+            //nm = new NetworkModel();
+            NewNetworkModel = nms.Nm;
+            OldNetworkModel = nms.Nm;
         }
 
         public static NetworkModel NetworkModel

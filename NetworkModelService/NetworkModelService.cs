@@ -17,11 +17,13 @@ namespace FTN.Services.NetworkModelService
         private NetworkModel nm = null;
         private List<ServiceHost> hosts = null;
 
+        public NetworkModel Nm { get => nm; set => nm = value; }
+
         public NetworkModelService()
         {
-            nm = new NetworkModel();
-            GenericDataAccess.NetworkModel = nm;
-            ResourceIterator.NetworkModel = nm;
+            Nm = new NetworkModel();
+            GenericDataAccess.NetworkModel = Nm;
+            ResourceIterator.NetworkModel = Nm;
           //  InitializeHosts();
         }
 
